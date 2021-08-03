@@ -4,11 +4,13 @@ import java.util.Scanner;
 public class Medias {
   public static void main(String[] args) throws IOException {
   
-	// variaveis
+	  //variaveis
+
 	int i= 0;
 	String status = null; 
 
-    System.out.println("Escreva quantidade de alunos");
+   // double media;  	
+    System.out.println("Escreva quantidade de alunos:");
     Scanner sc = new Scanner(System.in);
     int qtd = sc.nextInt();
     Aluno aluno[] = new Aluno[qtd];
@@ -21,26 +23,30 @@ public class Medias {
     aluno[i].nome = scst.nextLine();
     System.out.println("Escreva as notas do 1Trimestre:");
     aluno[i].nota1t = scst.nextDouble();
+    if (aluno[i].nota1t > 30) {System.out.println("Nota invalida"); break; }
     System.out.println("Escreva as notas do 2Trimestre:");
     aluno[i].nota2t = scst.nextDouble();
+    if (aluno[i].nota1t > 30) {System.out.println("Nota invalida"); break;}
     System.out.println("Escreva as notas do 3Trimestre:");
-    aluno[i].nota3t = scst.nextDouble();   
+    aluno[i].nota3t = scst.nextDouble(); 
+    if (aluno[i].nota1t > 40) {System.out.println("Nota invalida"); break;}
     System.out.printf("Media: %.1f\n",aluno[i].Media());
     
-    if (aluno[i].Media() >= 60 ){ status = "Aprovado"; }
-    else if (aluno[i].Media() < 50){status = "Reprovado";}
-    else if (aluno[i].Media() >= 50 && aluno[i].Media() <= 69){ status = "Fara a Avaliacao Final"; }
+    if (aluno[i].Media() >= 60.00 ){ status = "Aprovado"; }
+    else if (aluno[i].Media() < 50.00){status = "Reprovado";}
+    else if (aluno[i].Media() >= 50.00 && aluno[i].Media() <= 69.00){ status = "Fara a Avaliacao Final"; }
     i++;   
+    
     }while ( i < qtd );
     
     for ( i=0; i<qtd; i++) {
-    	System.out.println("Nome: " + aluno[i].nome + " Media: " + aluno[i].Media() + " Situacao: " + status);
+    	System.out.println("Nome: " + aluno[i].nome + ", Media: " + aluno[i].Media() + ", Situacao: " + status);
     }
     sc.close();
   }  
 }
-  
-  
+
+
      /* Extra  - Estrutura para lançamento de Nota do exame final
     emexame = sc.nextFloat();
      System.out.printf("Nota do exame: %.1f\n", emexame);
