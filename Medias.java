@@ -7,7 +7,7 @@ public class Medias {
 	  //variaveis
 
 	int i= 0;
-	String status = null; 
+	//String status = null; 
 
    // double media;  	
     System.out.println("Escreva quantidade de alunos:");
@@ -32,15 +32,15 @@ public class Medias {
     if (aluno[i].nota1t > 40) {System.out.println("Nota invalida"); break;}
     System.out.printf("Media: %.1f\n",aluno[i].Media());
     
-    if (aluno[i].Media() >= 60.00 ){ status = "Aprovado"; }
-    else if (aluno[i].Media() < 50.00){status = "Reprovado";}
-    else if (aluno[i].Media() >= 50.00 && aluno[i].Media() <= 69.00){ status = "Fara a Avaliacao Final"; }
+  //  if (aluno[i].Media() >= 60.00 ){ status = "Aprovado"; }
+   // else if (aluno[i].Media() < 50.00){status = "Reprovado";}
+   // else if (aluno[i].Media() >= 50.00 && aluno[i].Media() <= 69.00){ status = "Fara a Avaliacao Final"; }
     i++;   
     
     }while ( i < qtd );
     
     for ( i=0; i<qtd; i++) {
-    	System.out.println("Nome: " + aluno[i].nome + ", Media: " + aluno[i].Media() + ", Situacao: " + status);
+    	System.out.println("Nome: " + aluno[i].nome + ", Media: " + aluno[i].Media() + ", Situacao: " + aluno[i].Situacao());
     }
     sc.close();
   }  
@@ -51,7 +51,6 @@ public class Medias {
     emexame = sc.nextFloat();
      System.out.printf("Nota do exame: %.1f\n", emexame);
       ntfinal = (emexame + media) / 2;
-
       if (ntfinal >= 5){
         System.out.printf("Aluno aprovado.\n");
         System.out.printf("Media final: %.1f\n", ntfinal);
@@ -60,4 +59,5 @@ public class Medias {
         System.out.printf("Aluno reprovado\n");
         System.out.printf("Media final: %.1f\n",ntfinal);
      }*/
+
     
